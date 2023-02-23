@@ -13,7 +13,7 @@ def search_movies(query):
     movies = website.find_all("a", {'class': 'ml-mask jt'})
     for movie in movies:
         if movie:
-            movies_details["id"] = f"link{movies.mdisk(movie)}"
+            movies_details["id"] = f"link{movies.index(movie)}"
             movies_details["title"] = movie.find("span", {'class': 'mli-info'}).text
             url_list[movies_details["id"]] = movie['href']
         movies_list.append(movies_details)
